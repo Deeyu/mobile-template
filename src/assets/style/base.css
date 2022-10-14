@@ -1,0 +1,23 @@
+#app {
+  height: 100vh;
+  width: 100vw;
+  .page {
+    height: 100vh;
+  }
+}
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  @apply bg-blue-700 bg-opacity-75;
+
+  background: repeating-linear-gradient(90deg, #00dc82 0, #34cdfe 50%, #0047e1);
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+}

@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true // 允许使用 import 导入使用 export = 导出的默认内容
+  },
+  "include": ["package.json", "vite.config.ts", "build/**/*.ts"]
+}

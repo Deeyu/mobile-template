@@ -1,0 +1,112 @@
+{
+  "name": "vue3-mobile",
+  "private": true,
+  "version": "0.0.1",
+  "homepage": "",
+  "author": {
+    "name": "",
+    "email": "603607446@qq.com"
+  },
+  "repository": "",
+  "scripts": {
+    "dev": "vite",
+    "build:dev": "vue-tsc --noEmit && vite build --mode development",
+    "build": "vue-tsc --noEmit && vite build --mode production",
+    "typecheck": "npx vue-tsc --noEmit",
+    "preview": "vite preview",
+    "deps:fresh": "npx taze -w",
+    "deps:fresh:major": "npx taze major -w",
+    "deps:fresh:minor": "npx taze minor -w",
+    "deps:fresh:patch": "npx taze patch -w",
+    "preinstall": "npx only-allow pnpm",
+    "eslint": "eslint --ext .js,.vue,.ts --ignore-path .eslintignore --fix src",
+    "prettier": "prettier --write .",
+    "prepare": "husky install",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  },
+  "dependencies": {
+    "@nutui/nutui-bingo": "^1.0.5",
+    "@vueuse/core": "^9.3.0",
+    "animate.css": "^4.1.1",
+    "axios": "^1.1.2",
+    "dayjs": "^1.11.5",
+    "gsap": "^3.11.3",
+    "lodash-es": "^4.17.21",
+    "mitt": "^3.0.0",
+    "normalize.css": "^8.0.1",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.0.23",
+    "qs": "^6.11.0",
+    "swiper": "^8.4.3",
+    "vant": "4.0.0-beta.1",
+    "vconsole": "^3.14.7",
+    "vue": "^3.2.40",
+    "vue-router": "^4.1.5"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@types/lodash-es": "^4.17.6",
+    "@types/node": "^18.8.4",
+    "@types/nprogress": "^0.2.0",
+    "@types/qs": "^6.9.7",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "@vitejs/plugin-legacy": "^2.2.0",
+    "@vitejs/plugin-vue": "^3.1.2",
+    "@vitejs/plugin-vue-jsx": "^2.0.1",
+    "autoprefixer": "^10.4.12",
+    "cnjm-postcss-px-to-viewport": "^1.0.0",
+    "conventional-changelog-cli": "^2.2.2",
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.6.0",
+    "husky": "^8.0.1",
+    "less": "^4.1.3",
+    "lint-staged": "^13.0.3",
+    "postcss": "^8.4.17",
+    "prettier": "^2.7.1",
+    "rollup": "^3.0.0",
+    "rollup-plugin-visualizer": "^5.8.2",
+    "typescript": "^4.8.4",
+    "unplugin-auto-import": "^0.11.2",
+    "unplugin-vue-components": "^0.22.8",
+    "vite": "^3.1.7",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-imagemin": "^0.6.1",
+    "vite-plugin-mkcert": "^1.10.1",
+    "vite-plugin-pages": "^0.26.0",
+    "vite-plugin-progress": "^0.0.5",
+    "vite-plugin-restart": "^0.2.0",
+    "vite-plugin-style-import": "^2.0.0",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vite-plugin-vconsole": "^1.2.2",
+    "vite-plugin-vue-images": "^0.6.1",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vite-plugin-windicss": "^1.8.8",
+    "windicss": "^3.5.6"
+  },
+  "resolutions": {
+    "bin-wrapper": "npm:bin-wrapper-china",
+    "rollup": "^2.56.3",
+    "gifsicle": "5.2.0"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "terser"
+      ]
+    }
+  },
+  "engines": {
+    "node": "^12 || >=14"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "yarn eslint",
+      "yarn prettier"
+    ]
+  }
+}

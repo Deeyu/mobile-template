@@ -1,0 +1,10 @@
+# eslint 忽略检查 (根据项目需要自行添加)
+node_modules
+dist
+*.sh
+*.md
+*.woff
+*.ttf
+.husky
+src/assets/icons
+/public
