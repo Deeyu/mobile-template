@@ -2,7 +2,7 @@
 
 ## 简介
 
-Vue3-mobile 使用了最新的`vue3`,`vite2`,`TypeScript`等主流技术开发。
+Vue3-mobile 使用了最新的`vue3`,`vite3`,`TypeScript`等主流技术开发。
 
 ## 特性
 
@@ -22,7 +22,6 @@ Vue3-mobile 使用了最新的`vue3`,`vite2`,`TypeScript`等主流技术开发�
 
 ## 使用 🐂
 
-> 该模板不限定大家使用某一特定的包管理器，npm，yarn 和 pnpm 都行。同时注意 npm 的版本应该尽量的新。
 
 强烈推荐大家使用更快更合理的 `pnpm` 包管理器 👉 [安装教程](https://pnpm.io/zh/installation)
 
