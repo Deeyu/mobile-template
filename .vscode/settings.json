@@ -1,0 +1,13 @@
+{
+  "path-intellisense.mappings": {
+    "/@/": "${workspaceRoot}/src"
+  },
+  // 开启 eslint
+  "eslint.enable": true,
+  // 开启 prettier
+  "prettier.enable": true,
+  // 开启 eslint 作为格式化工具
+  "eslint.format.enable": true,
+  "npm.packageManager": "pnpm",
+  "typescript.tsdk": "node_modules\\typescript\\lib"
+}
