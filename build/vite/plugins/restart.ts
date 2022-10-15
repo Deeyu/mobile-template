@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-13 11:05:30
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-13 11:22:45
+ * @LastEditTime: 2022-10-15 14:42:40
  * @FilePath: \build\vite\plugins\restart.ts
  */
 /**
@@ -12,6 +12,6 @@
 import ViteRestart from 'vite-plugin-restart'
 export const ConfigRestartPlugin = () => {
   return ViteRestart({
-    restart: ['*.config.[jt]s', '**/config/*.[jt]s'],
+    restart: ['*.config.[jt]s', '**/config/*.[jt]s', '.env*', 'build/**/*'],
   })
 }

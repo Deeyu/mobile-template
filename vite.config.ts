@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-02-18 16:53:01
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-13 17:03:59
+ * @LastEditTime: 2022-10-15 14:57:45
  * @FilePath: \vite.config.ts
  */
 import type { UserConfig, ConfigEnv } from 'vite'
@@ -12,6 +12,7 @@ import dayjs from 'dayjs'
 import { createVitePlugins } from './build/vite/plugins'
 import proxy from './build/vite/proxy'
 import pkg from './package.json'
+import { wrapperEnv } from './build/vite/env'
 function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir)
 }
@@ -20,11 +21,14 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
   console.log(command, mode)
   const root = process.cwd()
   // 环境变量
-  const { VITE_BASE_URL, VITE_DROP_CONSOLE } = loadEnv(mode, root)
+  const env = loadEnv(mode, root)
+  const viteEnv = wrapperEnv(env)
 
-  const isProduction = command === 'build'
+  const { VITE_PORT, VITE_PUBLIC_PATH, VITE_DROP_CONSOLE } = viteEnv
+
+  const isBuild = command === 'build'
   return {
-    base: VITE_BASE_URL,
+    base: VITE_PUBLIC_PATH,
     esbuild: {
       pure: VITE_DROP_CONSOLE ? ['console.log', 'debugger'] : [],
     },
@@ -34,7 +38,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
         '#': pathResolve('types'),
       },
     },
-    plugins: createVitePlugins(loadEnv(mode, root), isProduction),
+    plugins: createVitePlugins(viteEnv, isBuild),
     css: {
       preprocessorOptions: {
         // reference:  避免重复引用
@@ -49,7 +53,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
       },
     },
     server: {
-      port: 4000, // 设置服务启动端口号
+      port: VITE_PORT, // 设置服务启动端口号
       open: false, // 设置服务启动时是否自动打开浏览器
       cors: true, // 允许跨域
       host: '0.0.0.0', //
@@ -70,7 +74,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
       include: ['vant', 'pinia'],
     },
     build: {
-      sourcemap: !isProduction,
+      sourcemap: !isBuild,
       target: 'es2015', // 默认值是一个 Vite 特有的值——'modules'，这是指 支持原生 ES 模块的浏览器。
       // outDir: 'dist',
       // assetsDir: 'assets',

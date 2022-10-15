@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-04-26 14:46:40
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-14 09:51:42
+ * @LastEditTime: 2022-10-15 08:56:48
  * @FilePath: \src\utils\index.ts
  */
 import { isObject } from '@/utils/is'
@@ -17,7 +17,7 @@ import { isObject } from '@/utils/is'
 type Result = {
   [key: string]: any
 }
-export function getParams(url: string): Result {
+export function getUrlObj(url = window.location.search): Result {
   const res: Result = {}
   if (url.includes('?')) {
     const str = url.split('?')[1]
@@ -60,4 +60,21 @@ export function deepMerge<T = any>(src: any = {}, target: any = {}): T {
     src[key] = isObject(src[key]) ? deepMerge(src[key], target[key]) : (src[key] = target[key])
   }
   return src
+}
+
+/**
+ * 生成并获取uuid（假设备号——缺点：不同浏览器打开都会生成新的）
+ */
+export function buildUUID() {
+  let uuid = window.localStorage.getItem('uuid')
+  if (!uuid) {
+    let d = new Date().getTime()
+    uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+      const r = (d + Math.random() * 16) % 16 | 0
+      d = Math.floor(d / 16)
+      return (c == 'x' ? r : (r & 0x3) | 0x8).toString(16)
+    })
+    window.localStorage.setItem('uuid', uuid)
+  }
+  return uuid
 }

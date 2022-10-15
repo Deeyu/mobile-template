@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-13 16:06:46
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-14 09:44:26
+ * @LastEditTime: 2022-10-15 15:15:00
  * @FilePath: \build\vite\plugins\html.ts
  */
 import { createHtmlPlugin } from 'vite-plugin-html'
@@ -11,11 +11,11 @@ const copyright_common_style = 'font-size: 14px; margin-bottom: 2px; padding: 6p
 const copyright_main_style = `${copyright_common_style} background: #e24329;`
 const copyright_sub_style = `${copyright_common_style} background: #707070;`
 
-export function createHtml(env, isBuild) {
-  const { VITE_APP_TITLE, VITE_APP_DEBUG_TOOL } = env
+export function createHtml(env: ViteEnv, isBuild: boolean) {
+  const { VITE_GLOB_APP_TITLE, VITE_APP_DEBUG_TOOL } = env
   const copyrightScript = `
 <script>
-  console.info('%cPowered by%c万顺叫车', '${copyright_sub_style}', '${copyright_main_style}', '\\nhttps://www.wsecar.com/');
+  console.info('%cPowered by%c万顺叫车', '${copyright_sub_style}', '${copyright_main_style}', '更新时间：${new Date().toLocaleString()}', '\\nhttps://www.wsecar.com/');
 </script>
   `
   let devtoolScript = ''
@@ -60,7 +60,7 @@ export function createHtml(env, isBuild) {
   const html = createHtmlPlugin({
     inject: {
       data: {
-        title: VITE_APP_TITLE,
+        title: VITE_GLOB_APP_TITLE,
         copyrightScript,
         loadingScript,
         devtoolScript,

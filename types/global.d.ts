@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-13 17:14:32
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-13 17:14:34
+ * @LastEditTime: 2022-10-15 14:33:52
  * @FilePath: \types\global.d.ts
  */
 import type {
@@ -64,7 +64,20 @@ declare global {
   declare type AppendToObject<T, U extends keyof any, V> = {
     [P in keyof T | U]: P extends keyof T ? T[P] : V
   }
-
+  declare interface ViteEnv {
+    VITE_PORT: number
+    VITE_GLOB_APP_TITLE: string
+    VITE_GLOB_APP_SHORT_NAME: string
+    VITE_PUBLIC_PATH: string
+    VITE_DROP_CONSOLE: boolean
+    VITE_APP_INSPECT: boolean
+    VITE_APP_API_BASEURL: string
+    VITE_APP_DEBUG_TOOL: 'eruda' | 'vconsole' | 'none' | undefined
+    VITE_BUILD_COMPRESS: 'gzip' | 'brotli' | 'none'
+    VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE: boolean
+    VITE_LEGACY: boolean
+    VITE_USE_IMAGEMIN: boolean
+  }
   declare function parseInt(s: string | number, radix?: number): number
 
   declare function parseFloat(string: string | number): number
@@ -91,10 +104,3 @@ declare module 'vue' {
     | { new (): ComponentPublicInstance<Props> }
     | FunctionalComponent<Props>
 }
-// 图片
-declare module '*.png'
-declare module '*.jpg'
-declare module '*.jpeg'
-declare module '*.gif'
-declare module '*.bmp'
-declare module '*.tiff'

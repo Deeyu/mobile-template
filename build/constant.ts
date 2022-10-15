@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-13 11:04:47
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-13 11:04:49
+ * @LastEditTime: 2022-10-15 10:17:55
  * @FilePath: \build\constant.ts
  */
 /**
@@ -29,12 +29,3 @@ export const MOCK_API_TARGET_URL = 'http://localhost:3000'
 
 // 包依赖分析
 export const ANALYSIS = true
-
-// 是否支持Md渲染
-export const MARKDOWN = true
-
-// 代码压缩
-export const COMPRESSION = true
-
-// 删除 console
-export const VITE_DROP_CONSOLE = true
