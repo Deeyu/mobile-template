@@ -8,7 +8,7 @@ overrides:
 specifiers:
   '@commitlint/cli': ^17.1.2
   '@commitlint/config-conventional': ^17.1.0
-  '@nutui/nutui-bingo': ^1.0.5
+  '@nutui/nutui': ^3.2.3
   '@types/lodash-es': ^4.17.6
   '@types/node': ^18.8.4
   '@types/nprogress': ^0.2.0
@@ -69,7 +69,7 @@ specifiers:
   windicss: ^3.5.6
 
 dependencies:
-  '@nutui/nutui-bingo': 1.0.5
+  '@nutui/nutui': 3.2.3_vue@3.2.40
   '@vueuse/core': 9.3.0_vue@3.2.40
   animate.css: 4.1.1
   axios: 1.1.2
@@ -759,18 +759,6 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@nutui/nutui-bingo/1.0.5:
-    resolution: {integrity: sha512-RLXl7PXRtvYar7OSI548eoU8QcE0ZYogih0dmD9zE2WPGD+Mgr9gZm9wB9mNkIQJ9kajql3hPpbm+REvyjfsBA==}
-    dependencies:
-      '@nutui/nutui': 3.2.3_vue@3.2.40
-      sass: 1.55.0
-      vconsole: 3.14.7
-      vue: 3.2.40
-      vue-router: 4.1.5_vue@3.2.40
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
   /@nutui/nutui/3.2.3_vue@3.2.40:
     resolution: {integrity: sha512-0uNVN0NP+8UedyH8nl7aaubflsOcHoX/ts/gBdjUy9LmCBiUDyiUGxpSh7vhXsrXWEbFw6qCNsXpkmvlPUBLkg==}
     dependencies:
@@ -951,7 +939,7 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 18.8.4
+      '@types/node': 18.8.5
     dev: true
 
   /@types/imagemin-gifsicle/7.0.1:

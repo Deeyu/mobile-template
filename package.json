@@ -25,7 +25,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
-    "@nutui/nutui-bingo": "^1.0.5",
+    "@nutui/nutui": "^3.2.3",
     "@vueuse/core": "^9.3.0",
     "animate.css": "^4.1.1",
     "axios": "^1.1.2",
