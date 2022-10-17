@@ -12,6 +12,7 @@ import { getToken } from '@/utils/auth'
 import { setObjToUrlParams, deepMerge } from '@/utils'
 import { joinTimestamp, formatRequestDate } from './helper'
 import { showDialog, showFailToast } from 'vant'
+import axios from 'axios'
 
 const urlPrefix = import.meta.env.VITE_GLOB_API_URL_PREFIX
 const BASEURL = import.meta.env.VITE_APP_API_BASEURL
@@ -157,6 +158,10 @@ const transform: AxiosTransform = {
     const msg: string = response?.data?.msg ?? ''
     const err: string = error?.toString?.() ?? ''
     let errMessage = ''
+
+    if (axios.isCancel(error)) {
+      return Promise.reject(error)
+    }
 
     try {
       if (code === 'ECONNABORTED' && message.indexOf('timeout') !== -1) {

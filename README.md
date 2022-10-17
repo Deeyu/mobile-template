@@ -22,7 +22,6 @@ Vue3-mobile 使用了最新的`vue3`,`vite3`,`TypeScript`等主流技术开发�
 
 ## 使用 🐂
 
-
 强烈推荐大家使用更快更合理的 `pnpm` 包管理器 👉 [安装教程](https://pnpm.io/zh/installation)
 
 1. 安装依赖
@@ -71,3 +70,16 @@ pnpm dev
 # 或者 npm run dev
 # 或者 yarn dev
 ```
+
+4. 灵活使用 vueuse
+
+````
+	#获取页面query
+	import { useUrlSearchParams } from '@vueuse/core'
+	const params = useUrlSearchParams('history')
+	console.log(params.foo) // 'bar'
+	params.foo = 'bar'
+	params.vueuse = 'awesome'
+	#url updated to `?foo=bar&vueuse=awesome`
+	```
+````

@@ -2,13 +2,11 @@
  * @Author: DaiYu
  * @Date: 2022-06-20 16:16:03
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-13 14:47:04
+ * @LastEditTime: 2022-10-17 16:15:04
  * @FilePath: \windi.config.ts
  */
 import { defineConfig } from 'windicss/helpers'
 import { colors } from './src/assets/style/colors'
-import formsPlugin from 'windicss/plugin/forms'
-import typography from 'windicss/plugin/typography'
 export default defineConfig({
   /* 配置项... */
   attributify: {
@@ -45,10 +43,5 @@ export default defineConfig({
   // },
   variants: {},
   extend: {},
-  plugins: [
-    formsPlugin,
-    typography({
-      dark: true,
-    }),
-  ],
+  plugins: [],
 })

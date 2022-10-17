@@ -28,7 +28,7 @@
     "types/**/*.ts",
     "types/**/*.d.ts",
     "build/**/*.ts",
-    "vite.config.ts",
+    "vite.config.ts"
   ],
   "exclude": ["node_modules", "dist", "**/*.js"]
   // "references": [{ "path": "./tsconfig.node.json" }]

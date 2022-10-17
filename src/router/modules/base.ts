@@ -1,9 +1,12 @@
-import { RouteRecordRaw } from 'vue-router'
+/*
+ * @Author: DaiYu
+ * @Date: 2022-10-15 16:45:41
+ * @LastEditors: DaiYu
+ * @LastEditTime: 2022-10-17 09:53:19
+ * @FilePath: \src\router\modules\base.ts
+ */
+import type { RouteRecordRaw } from 'vue-router'
 const baseRoutes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    redirect: '/index',
-  },
   {
     path: '/index',
     name: 'Index',

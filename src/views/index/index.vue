@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-02-18 17:30:23
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-07-05 16:18:14
+ * @LastEditTime: 2022-10-17 09:00:52
  * @FilePath: \src\views\index\index.vue
 -->
 <template>
@@ -30,7 +30,6 @@
     </div>
     <!-- 播放工具 -->
     <div class="playtool"></div>
-    <tabbar />
   </div>
 </template>
 

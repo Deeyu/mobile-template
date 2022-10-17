@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-13 17:14:32
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-15 14:33:52
+ * @LastEditTime: 2022-10-17 15:26:12
  * @FilePath: \types\global.d.ts
  */
 import type {
@@ -15,7 +15,7 @@ import type {
 } from 'vue'
 
 declare global {
-  const __APP_INFO__: {
+  const __SYSTEM_INFO__: {
     pkg: {
       name: string
       version: string

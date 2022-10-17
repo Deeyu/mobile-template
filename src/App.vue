@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-02-18 16:53:01
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-13 16:57:16
+ * @LastEditTime: 2022-10-17 08:52:41
  * @FilePath: \src\App.vue
 -->
 <script setup lang="ts">
@@ -26,7 +26,7 @@ const cachedViews = reactive([])
 // :deep() 之前的 '>>>' 已经被废弃，现在使用:deep()伪类
 #app {
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   box-sizing: border-box;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
