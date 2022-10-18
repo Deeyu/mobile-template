@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-13 17:14:32
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-17 15:26:12
+ * @LastEditTime: 2022-10-18 14:54:37
  * @FilePath: \types\global.d.ts
  */
 import type {
@@ -78,6 +78,17 @@ declare global {
     VITE_LEGACY: boolean
     VITE_USE_IMAGEMIN: boolean
   }
+
+  // 公参
+  declare interface Packet {
+    channel: string | number
+    deviceId: string
+    op: string
+    platform: string | number
+    softVersion: string
+    sysVersion: string
+  }
+
   declare function parseInt(s: string | number, radix?: number): number
 
   declare function parseFloat(string: string | number): number

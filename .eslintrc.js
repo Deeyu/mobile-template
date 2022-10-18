@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-02-21 10:32:53
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-14 10:22:34
+ * @LastEditTime: 2022-10-18 09:29:41
  * @FilePath: \.eslintrc.js
  */
 module.exports = {
@@ -80,6 +80,10 @@ module.exports = {
     'vue/attribute-hyphenation': 'off',
     'vue/require-default-prop': 'off',
     'no-empty': 'off', //禁止空语句块出现
+    // 结尾必须有逗号(主要缓解增加一行对象属性，导致 git 变更记录是两行的情况)
+    'comma-dangle': ['error', 'always-multiline'],
+    // 逗号必须在一行的结尾
+    'comma-style': ['error', 'last'],
     'vue/html-self-closing': [
       'error',
       {
