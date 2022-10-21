@@ -22,4 +22,7 @@ stats.html
 *.njsproj
 *.sln
 *.sw?
-
+# 自动生成文件
+types/auto-imports.d.ts
+types/eslintrc-auto-import.json
+types/components.d.ts
