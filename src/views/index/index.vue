@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-02-18 17:30:23
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-18 09:02:46
+ * @LastEditTime: 2022-10-19 10:15:52
  * @FilePath: \src\views\index\index.vue
 -->
 <template>

@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-06-21 15:41:11
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-06-21 15:41:12
+ * @LastEditTime: 2022-10-19 10:17:03
  * @FilePath: \src\assets\style\colors.ts
  */
 import windiColors from 'windicss/colors'
@@ -48,8 +48,8 @@ export const colors = {
     DEFAULT: '#6200ee',
   },
   light: windiColors.light,
-  gray: windiColors.coolGray,
-  blue: windiColors.lightBlue,
+  gray: windiColors.gray,
+  blue: windiColors.sky,
   red: windiColors.rose,
   pink: windiColors.fuchsia,
   indigo: windiColors.indigo,

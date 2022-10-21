@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-04-26 14:46:40
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-15 08:56:48
+ * @LastEditTime: 2022-10-21 08:37:14
  * @FilePath: \src\utils\index.ts
  */
 import { isObject } from '@/utils/is'
@@ -77,4 +77,17 @@ export function buildUUID() {
     window.localStorage.setItem('uuid', uuid)
   }
   return uuid
+}
+
+export function openWindow(
+  url: string,
+  opt?: { target?: TargetContext | string; noopener?: boolean; noreferrer?: boolean },
+) {
+  const { target = '__blank', noopener = true, noreferrer = true } = opt || {}
+  const feature: string[] = []
+
+  noopener && feature.push('noopener=yes')
+  noreferrer && feature.push('noreferrer=yes')
+
+  window.open(url, target, feature.join(','))
 }

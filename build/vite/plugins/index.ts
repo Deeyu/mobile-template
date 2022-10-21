@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-13 11:05:30
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-15 14:55:47
+ * @LastEditTime: 2022-10-19 17:44:05
  * @FilePath: \build\vite\plugins\index.ts
  */
 /**
@@ -13,7 +13,7 @@ import { PluginOption } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import VitePluginCertificate from 'vite-plugin-mkcert'
-import vueSetupExtend from 'vite-plugin-vue-setup-extend'
+import vueSetupExtend from 'vite-plugin-vue-setup-extend-plus'
 import WindiCSS from 'vite-plugin-windicss'
 import legacy from '@vitejs/plugin-legacy'
 import Inspect from 'vite-plugin-inspect'
@@ -23,7 +23,6 @@ import { AutoImportDeps } from './autoImport'
 import { ConfigVisualizerConfig } from './visualizer'
 import { ConfigCompressPlugin } from './compress'
 // import { ConfigPagesPlugin } from './pages'
-import { ConfigRestartPlugin } from './restart'
 import { ConfigProgressPlugin } from './progress'
 import { ConfigImageminPlugin } from './imagemin'
 // import { ConfigVConsolePlugin } from './vconsole'
@@ -71,9 +70,6 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild = false) {
     vitePlugins.push(
       ConfigCompressPlugin(VITE_BUILD_COMPRESS, VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE),
     )
-
-  // 监听配置文件改动重启
-  !isBuild && vitePlugins.push(ConfigRestartPlugin())
 
   // 构建时显示进度条
   vitePlugins.push(ConfigProgressPlugin())

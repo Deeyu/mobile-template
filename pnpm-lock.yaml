@@ -31,7 +31,6 @@ specifiers:
   eslint-config-prettier: ^8.5.0
   eslint-plugin-prettier: ^4.2.1
   eslint-plugin-vue: ^9.6.0
-  gsap: ^3.11.3
   husky: ^8.0.1
   less: ^4.1.3
   lint-staged: ^13.0.3
@@ -59,12 +58,11 @@ specifiers:
   vite-plugin-mkcert: ^1.10.1
   vite-plugin-pages: ^0.26.0
   vite-plugin-progress: ^0.0.5
-  vite-plugin-restart: ^0.2.0
   vite-plugin-style-import: ^2.0.0
   vite-plugin-svg-icons: ^2.0.1
   vite-plugin-vconsole: ^1.2.2
   vite-plugin-vue-images: ^0.6.1
-  vite-plugin-vue-setup-extend: ^0.4.0
+  vite-plugin-vue-setup-extend-plus: ^0.1.0
   vite-plugin-windicss: ^1.8.8
   vue: ^3.2.40
   vue-router: ^4.1.5
@@ -79,7 +77,6 @@ dependencies:
   axios: 1.1.2
   dayjs: 1.11.5
   echarts: 5.4.0
-  gsap: 3.11.3
   lodash-es: 4.17.21
   mitt: 3.0.0
   normalize.css: 8.0.1
@@ -130,12 +127,11 @@ devDependencies:
   vite-plugin-mkcert: 1.10.1_vite@3.1.7
   vite-plugin-pages: 0.26.0_vite@3.1.7
   vite-plugin-progress: 0.0.5_vite@3.1.7
-  vite-plugin-restart: 0.2.0_vite@3.1.7
   vite-plugin-style-import: 2.0.0_vite@3.1.7
   vite-plugin-svg-icons: 2.0.1_vite@3.1.7
   vite-plugin-vconsole: 1.2.2
   vite-plugin-vue-images: 0.6.1
-  vite-plugin-vue-setup-extend: 0.4.0_vite@3.1.7
+  vite-plugin-vue-setup-extend-plus: 0.1.0
   vite-plugin-windicss: 1.8.8_vite@3.1.7
   windicss: 3.5.6
 
@@ -5987,13 +5983,6 @@ packages:
     engines: { node: '>=4.x' }
     dev: false
 
-  /gsap/3.11.3:
-    resolution:
-      {
-        integrity: sha512-xc/iIJy+LWiMbRa4IdMtdnnKa/7PXEK6NNzV71gdOYUVeTZN7UWnLU0fB7Hi1iwiz4ZZoYkBZPPYGg+2+zzFHA==,
-      }
-    dev: false
-
   /handlebars/4.7.7:
     resolution:
       {
@@ -11342,18 +11331,6 @@ packages:
       vite: 3.1.7_less@4.1.3
     dev: true
 
-  /vite-plugin-restart/0.2.0_vite@3.1.7:
-    resolution:
-      {
-        integrity: sha512-DDgZh2EM0b2ZvqMpk3AOiXMP/ZOLhrJhUvcYkV21qbBl85tM5ezzt2OUXamV0wIsOzz3UDFAnLcHs3k6G3QMWw==,
-      }
-    peerDependencies:
-      vite: ^2.9.0 || ^3.0.0
-    dependencies:
-      micromatch: 4.0.5
-      vite: 3.1.7_less@4.1.3
-    dev: true
-
   /vite-plugin-style-import/2.0.0_vite@3.1.7:
     resolution:
       {
@@ -11412,17 +11389,11 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-vue-setup-extend/0.4.0_vite@3.1.7:
+  /vite-plugin-vue-setup-extend-plus/0.1.0:
     resolution:
       {
-        integrity: sha512-WMbjPCui75fboFoUTHhdbXzu4Y/bJMv5N9QT9a7do3wNMNHHqrk+Tn2jrSJU0LS5fGl/EG+FEDBYVUeWIkDqXQ==,
+        integrity: sha512-pa27KIsHIBvBMv4xz9uB3UCfAuP2tr7PLlFhCS9vw+aXd326LEHsvhqd3hCQDOR5MjlQVyQH6vwuGr3u+KRiiw==,
       }
-    peerDependencies:
-      vite: '>=2.0.0'
-    dependencies:
-      '@vue/compiler-sfc': 3.2.40
-      magic-string: 0.25.9
-      vite: 3.1.7_less@4.1.3
     dev: true
 
   /vite-plugin-windicss/1.8.8_vite@3.1.7:

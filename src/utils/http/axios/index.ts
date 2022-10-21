@@ -15,8 +15,8 @@ import { showDialog, showFailToast } from 'vant'
 import axios from 'axios'
 
 const urlPrefix = import.meta.env.VITE_GLOB_API_URL_PREFIX
-const BASEURL = import.meta.env.VITE_APP_API_BASEURL
-
+const BASEURL = import.meta.env.VITE_APP_BASE_URL
+console.log('BASEURL', import.meta.env)
 /**
  * @description: 数据处理，方便区分多种处理方式
  */
@@ -198,7 +198,6 @@ function createAxios(opt?: Partial<CreateAxiosOptions>) {
         timeout: 10 * 1000,
         // 基础接口地址
         // baseURL: globSetting.apiUrl,
-        // 公共请求头'service': 'wos', 'appname': 'wos'
         headers: {
           'Content-Type': ContentTypeEnum.JSON,
           appname: 'wsecar',

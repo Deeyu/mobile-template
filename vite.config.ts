@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-02-18 16:53:01
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-15 14:57:45
+ * @LastEditTime: 2022-10-19 11:13:19
  * @FilePath: \vite.config.ts
  */
 import type { UserConfig, ConfigEnv } from 'vite'
