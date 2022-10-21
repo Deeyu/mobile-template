@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-07-05 09:51:05
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-14 10:07:13
+ * @LastEditTime: 2022-10-21 11:01:37
  * @FilePath: \src\api\user.ts
  */
 /*
@@ -13,7 +13,7 @@
  * @FilePath: \src\api\banner.ts
  */
 
-import { defHttp } from '@/utils/http/axios'
+// import { defHttp } from '@/utils/http/axios'
 
 enum Api {
   BANNER = '/banner',

@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-13 11:05:30
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-17 15:08:52
+ * @LastEditTime: 2022-10-21 10:57:59
  * @FilePath: \build\vite\plugins\autoImport.ts
  */
 /**
@@ -20,7 +20,7 @@ export const AutoImportDeps = () => {
       /\.vue\?vue/, // .vue
       /\.md$/, // .md
     ],
-    imports: ['vue', 'pinia', 'vue-router', '@vueuse/core'],
+    imports: ['vue', 'pinia', 'vue-router', '@vueuse/core', { '@/utils/http/axios': ['defHttp'] }],
     dts: 'types/auto-imports.d.ts',
     // 解决eslint抛错
     eslintrc: {
