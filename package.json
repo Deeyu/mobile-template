@@ -72,6 +72,7 @@
     "rollup": "^3.0.0",
     "rollup-plugin-visualizer": "^5.8.2",
     "typescript": "^4.8.4",
+    "unocss": "^0.45.30",
     "unplugin-auto-import": "^0.11.2",
     "unplugin-vue-components": "^0.22.8",
     "vite": "^3.1.7",
@@ -86,9 +87,7 @@
     "vite-plugin-svg-icons": "^2.0.1",
     "vite-plugin-vconsole": "^1.2.2",
     "vite-plugin-vue-images": "^0.6.1",
-    "vite-plugin-vue-setup-extend-plus": "^0.1.0",
-    "vite-plugin-windicss": "^1.8.8",
-    "windicss": "^3.5.6"
+    "vite-plugin-vue-setup-extend-plus": "^0.1.0"
   },
   "resolutions": {
     "bin-wrapper": "npm:bin-wrapper-china",

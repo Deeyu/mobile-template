@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-13 11:05:30
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-19 17:44:05
+ * @LastEditTime: 2022-10-21 18:37:09
  * @FilePath: \build\vite\plugins\index.ts
  */
 /**
@@ -14,7 +14,7 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import VitePluginCertificate from 'vite-plugin-mkcert'
 import vueSetupExtend from 'vite-plugin-vue-setup-extend-plus'
-import WindiCSS from 'vite-plugin-windicss'
+import Unocss from 'unocss/vite'
 import legacy from '@vitejs/plugin-legacy'
 import Inspect from 'vite-plugin-inspect'
 import { ConfigSvgIconsPlugin } from './svgIcons'
@@ -41,7 +41,7 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild = false) {
     vue(),
     // JSX支持
     vueJsx(),
-    WindiCSS(),
+    Unocss(),
     // 调试工具
     Inspect({
       enabled: VITE_APP_INSPECT,

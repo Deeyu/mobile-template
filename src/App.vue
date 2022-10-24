@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-02-18 16:53:01
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-18 15:51:04
+ * @LastEditTime: 2022-10-21 16:52:50
  * @FilePath: \src\App.vue
 -->
 <script setup lang="ts">
@@ -11,11 +11,13 @@ import 'dayjs/locale/zh-cn'
 <template>
   <router-view v-slot="{ Component, route }">
     <transition name="fade" mode="out-in">
-      <keep-alive>
-        <component v-if="route.meta && route.meta.keepAlive" :is="Component" :key="route.path" />
-      </keep-alive>
+      <template v-if="route.meta && route.meta.keepAlive">
+        <keep-alive>
+          <component :is="Component" :key="route.path" />
+        </keep-alive>
+      </template>
+      <component v-else :is="Component" :key="route.path" />
     </transition>
-    <component v-if="!(route.meta && route.meta.keepAlive)" :is="Component" :key="route.path" />
   </router-view>
 </template>
 <style lang="less">
