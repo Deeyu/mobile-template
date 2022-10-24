@@ -10,5 +10,5 @@
   "eslint.format.enable": true,
   "npm.packageManager": "pnpm",
   "typescript.tsdk": "node_modules\\typescript\\lib",
-	"unocss.root": "packages/client"
+  "unocss.root": "packages/client"
 }
