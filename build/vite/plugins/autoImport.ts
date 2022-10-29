@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-13 11:05:30
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-21 10:57:59
+ * @LastEditTime: 2022-10-25 16:40:50
  * @FilePath: \build\vite\plugins\autoImport.ts
  */
 /**
@@ -10,7 +10,6 @@
  * @description 按需加载，api自动引入
  */
 import AutoImport from 'unplugin-auto-import/vite'
-
 export const AutoImportDeps = () => {
   return AutoImport({
     // 目标文件
@@ -20,7 +19,13 @@ export const AutoImportDeps = () => {
       /\.vue\?vue/, // .vue
       /\.md$/, // .md
     ],
-    imports: ['vue', 'pinia', 'vue-router', '@vueuse/core', { '@/utils/http/axios': ['defHttp'] }],
+    imports: [
+      'vue',
+      'pinia',
+      'vue-router',
+      '@vueuse/core',
+      { '@/utils/http/axios': ['defHttp', 'driverHttp'], vant: ['showFailToast', 'showDialog'] },
+    ],
     dts: 'types/auto-imports.d.ts',
     // 解决eslint抛错
     eslintrc: {

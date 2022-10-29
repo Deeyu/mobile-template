@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-02-18 16:53:01
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-19 11:13:19
+ * @LastEditTime: 2022-10-26 09:25:58
  * @FilePath: \vite.config.ts
  */
 import type { UserConfig, ConfigEnv } from 'vite'
@@ -55,7 +55,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
     server: {
       port: VITE_PORT, // 设置服务启动端口号
       open: false, // 设置服务启动时是否自动打开浏览器
-      cors: true, // 允许跨域
+      // cors: true, // 允许跨域
       host: '0.0.0.0', //
       hmr: true,
       proxy,
@@ -71,7 +71,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
       // }
     },
     optimizeDeps: {
-      include: ['vant', 'pinia'],
+      include: ['vant', 'pinia', 'echarts', 'swiper', 'swiper/vue'],
     },
     build: {
       sourcemap: !isBuild,

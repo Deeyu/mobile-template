@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-08-03 11:25:03
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-19 15:08:51
+ * @LastEditTime: 2022-10-25 14:51:13
  * @FilePath: \src\enums\httpEnum.ts
  */
 /**

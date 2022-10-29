@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-13 17:03:00
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-13 17:12:37
+ * @LastEditTime: 2022-10-25 11:21:18
  * @FilePath: \src\utils\http\axios\axiosTransform.ts
  */
 /**
@@ -26,9 +26,9 @@ export abstract class AxiosTransform {
   beforeRequestHook?: (config: AxiosRequestConfig, options: RequestOptions) => AxiosRequestConfig
 
   /**
-   * @description: Request successfully processed
+   * @description: 处理响应数据
    */
-  transformRequestHook?: (res: AxiosResponse<Result>, options: RequestOptions) => any
+  transformResponseHook?: (res: AxiosResponse<Result>, options: RequestOptions) => any
 
   /**
    * @description: 请求失败处理

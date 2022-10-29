@@ -13,18 +13,21 @@ import { setObjToUrlParams, deepMerge } from '@/utils'
 import { joinTimestamp, formatRequestDate } from './helper'
 import { showDialog, showFailToast } from 'vant'
 import axios from 'axios'
+import clone from 'lodash-es/clone'
+import packet from '@/utils/packet'
 
 const urlPrefix = import.meta.env.VITE_GLOB_API_URL_PREFIX
 const BASEURL = import.meta.env.VITE_APP_BASE_URL
-console.log('BASEURL', import.meta.env)
+const DRIVERBASEURL = import.meta.env.VITE_APP_BASE_URL_DRIVER
+
 /**
  * @description: 数据处理，方便区分多种处理方式
  */
 const transform: AxiosTransform = {
   /**
-   * @description: 处理请求数据。如果数据不是预期格式，可直接抛出错误
+   * @description: 处理响应数。如果数据不是预期格式，可直接抛出错误
    */
-  transformRequestHook: (res: AxiosResponse<Result>, options: RequestOptions) => {
+  transformResponseHook: (res: AxiosResponse<Result>, options: RequestOptions) => {
     const { isTransformResponse, isReturnNativeResponse } = options
     // 是否返回原生响应头 比如：需要获取响应头时使用该属性
     if (isReturnNativeResponse) {
@@ -74,8 +77,8 @@ const transform: AxiosTransform = {
     } else if (options.errorMessageMode === 'message') {
       showFailToast({ type: 'fail', message: timeoutMsg })
     }
-
-    throw new Error(timeoutMsg || '请求出错，请稍候重试')
+    // code != 1返回
+    return Promise.reject(data)
   },
 
   // 请求之前处理config
@@ -105,11 +108,11 @@ const transform: AxiosTransform = {
       if (!isString(params)) {
         formatDate && formatRequestDate(params)
         if (Reflect.has(config, 'data') && config.data && Object.keys(config.data).length > 0) {
-          config.data = data
+          config.data = { ...packet, data: JSON.stringify(data), token: null }
           config.params = params
         } else {
           // 非GET请求如果没有提供data，则将params视为data
-          config.data = params
+          config.data = { ...packet, data: JSON.stringify(params), token: null }
           config.params = undefined
         }
         if (joinParamsToUrl) {
@@ -124,6 +127,7 @@ const transform: AxiosTransform = {
         config.params = undefined
       }
     }
+    // console.log(config)
     return config
   },
 
@@ -195,17 +199,17 @@ function createAxios(opt?: Partial<CreateAxiosOptions>) {
         // authentication schemes，e.g: Bearer
         // authenticationScheme: 'Bearer',
         authenticationScheme: '',
-        timeout: 10 * 1000,
+        timeout: 20 * 1000,
         // 基础接口地址
         // baseURL: globSetting.apiUrl,
         headers: {
           'Content-Type': ContentTypeEnum.JSON,
-          appname: 'wsecar',
+          'Access-Control-Allow-Origin': '*',
         },
         // 如果是form-data格式
         // headers: { 'Content-Type': ContentTypeEnum.FORM_URLENCODED },
         // 数据处理方式
-        transform,
+        transform: clone(transform),
         // 配置项，下面的选项都可以在独立的接口请求中覆盖
         requestOptions: {
           // 默认将prefix 添加到url
@@ -239,8 +243,8 @@ function createAxios(opt?: Partial<CreateAxiosOptions>) {
 export const defHttp = createAxios()
 
 // other api url
-export const baseHttp = createAxios({
+export const driverHttp = createAxios({
   requestOptions: {
-    urlPrefix: '',
+    apiUrl: DRIVERBASEURL,
   },
 })

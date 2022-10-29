@@ -2,13 +2,13 @@
  * @Author: DaiYu
  * @Date: 2022-04-25 16:46:38
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-13 16:49:13
+ * @LastEditTime: 2022-10-26 11:28:06
  * @FilePath: \src\store\modules\user\index.ts
  */
 import { UserStore } from './type'
 
 export const useUserStore = defineStore({
-  id: 'mian',
+  id: 'user', // 必须，在所有 Store 中唯一
   state: (): UserStore => ({
     name: '超级管理员',
     token: '',
@@ -30,6 +30,7 @@ export const useUserStore = defineStore({
       localStorage.removeItem('WSTOKEN')
     },
     setToken(token: string) {
+      // 使用 this.$pat 修改多个值
       this.token = token ?? ''
       localStorage.setItem('WSTOKEN', token)
     },
