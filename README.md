@@ -24,30 +24,30 @@ Vue3-mobile 使用了最新的 `vue3`,`vite3`,`TypeScript,vant4`等主流技术�
 7. [TypeScript](https://www.typescriptlang.org/) - 熟悉 `TypeScript`基本语法
 8. [pinia](https://pinia.web3doc.top/) 状态管理
 9. pnpm 包管理器
-10. 组件库使用👉[vant4](https://vant-contrib.gitee.io/vant/v4/#/zh-CN/home)
+10. 组件库使用 👉[vant4](https://vant-contrib.gitee.io/vant/v4/#/zh-CN/home)
 
 ## `node` 版本推荐 🐎
 
 因为该模板完全面向现代，所以推荐大家使用 `node` 当前的长期维护版本 `v16`， 大于 `v16.13.1` 即可
 
-## 安装使用🐂
+## 安装使用 🐂
 
 强烈推荐大家使用更快更合理的 `pnpm` 包管理器 👉 [安装教程](https://pnpm.io/zh/installation)
 
-* 环境配置
+- 环境配置
 
 ```shell
   本地环境需要安装 pnpm 7.x 、Node.js 16+
   node版本控制可以使用nvm
 ```
 
-* 安装依赖
+- 安装依赖
 
 ```shell
 pnpm install
 ```
 
-* 依赖更新
+- 依赖更新
 
 ```shell
 # 安全版本更新
@@ -96,7 +96,7 @@ pnpm build
 
 ## 灵活使用 [vueuse](https://vueuse.org/)
 
-````typescript
+```typescript
 // 获取页面query
 import { useUrlSearchParams } from '@vueuse/core'
 const params = useUrlSearchParams('history')
@@ -104,4 +104,4 @@ console.log(params.foo) // 'bar'
 params.foo = 'bar'
 params.vueuse = 'awesome'
 #url updated to `?foo=bar&vueuse=awesome`
-````
+```
