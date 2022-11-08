@@ -2,15 +2,13 @@
  * @Author: DaiYu
  * @Date: 2022-08-03 11:25:03
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-14 09:43:33
+ * @LastEditTime: 2022-10-18 16:24:35
  * @FilePath: \src\utils\http\axios\checkStatus.ts
  */
 import type { ErrorMessageMode } from '#/axios'
 import { showFailToast } from 'vant'
 import { showDialog } from 'vant'
 // import type { ToastType, ToastProps, ToastOptions, ToastPosition } from 'vant'
-import 'vant/es/toast/style'
-import 'vant/es/dialog/style'
 export function checkStatus(
   status: number,
   msg: string,

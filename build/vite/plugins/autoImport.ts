@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-13 11:05:30
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-13 11:08:53
+ * @LastEditTime: 2022-11-08 08:43:02
  * @FilePath: \build\vite\plugins\autoImport.ts
  */
 /**
@@ -10,7 +10,6 @@
  * @description 按需加载，api自动引入
  */
 import AutoImport from 'unplugin-auto-import/vite'
-
 export const AutoImportDeps = () => {
   return AutoImport({
     // 目标文件
@@ -24,8 +23,11 @@ export const AutoImportDeps = () => {
       'vue',
       'pinia',
       'vue-router',
+      '@vueuse/core',
       {
-        '@vueuse/core': [],
+        '@/utils/http/axios': ['defHttp', 'driverHttp'],
+        vant: ['showFailToast', 'showDialog'],
+        '@/utils/dateUtil': ['formatToDateTime', 'formatToDate', 'dateUtil'],
       },
     ],
     dts: 'types/auto-imports.d.ts',

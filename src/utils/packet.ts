@@ -7,7 +7,7 @@
  */
 import { getUrlObj, buildUUID } from './index'
 const { channel, platform } = getUrlObj()
-export default {
+const packet: Packet = {
   channel: channel || '10600001',
   deviceId: buildUUID(),
   op: '',
@@ -15,3 +15,4 @@ export default {
   softVersion: 'H5',
   sysVersion: 'H5',
 }
+export default packet

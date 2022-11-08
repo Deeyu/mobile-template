@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-02-18 16:53:01
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-15 14:57:45
+ * @LastEditTime: 2022-11-03 11:29:39
  * @FilePath: \vite.config.ts
  */
 import type { UserConfig, ConfigEnv } from 'vite'
@@ -55,7 +55,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
     server: {
       port: VITE_PORT, // 设置服务启动端口号
       open: false, // 设置服务启动时是否自动打开浏览器
-      cors: true, // 允许跨域
+      // cors: true, // 允许跨域
       host: '0.0.0.0', //
       hmr: true,
       proxy,
@@ -70,8 +70,9 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
       //   }
       // }
     },
+    // 选项可以选择需要或不需要进行预编译的依赖的名称，Vite 则会根据该选项来确定是否对该依赖进行预编译。
     optimizeDeps: {
-      include: ['vant', 'pinia'],
+      include: ['vant', 'pinia', 'echarts', 'swiper', 'swiper/vue', '@vueuse/core'],
     },
     build: {
       sourcemap: !isBuild,

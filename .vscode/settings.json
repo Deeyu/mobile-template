@@ -9,5 +9,6 @@
   // 开启 eslint 作为格式化工具
   "eslint.format.enable": true,
   "npm.packageManager": "pnpm",
-  "typescript.tsdk": "node_modules\\typescript\\lib"
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "unocss.root": "packages/client"
 }

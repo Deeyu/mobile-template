@@ -2,13 +2,13 @@
  * @Author: DaiYu
  * @Date: 2022-02-21 10:38:30
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-06-14 17:05:50
+ * @LastEditTime: 2022-10-28 17:29:46
  * @FilePath: \.prettierrc.js
  */
 module.exports = {
   printWidth: 100, // 每行代码长度（默认80）
   tabWidth: 2, // 每个tab相当于多少个空格（默认2）ab进行缩进（默认false）
-  useTabs: false, // 是否使用t
+  useTabs: false, // 是否使用tab空格
   singleQuote: true, // 使用单引号（默认false）
   semi: false, // 声明结尾使用分号(默认true)
   trailingComma: 'all', // 多行使用拖尾逗号（默认none）

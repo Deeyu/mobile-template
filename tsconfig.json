@@ -29,6 +29,7 @@
     "types/**/*.d.ts",
     "build/**/*.ts",
     "vite.config.ts",
+    "unocss.config.ts"
   ],
   "exclude": ["node_modules", "dist", "**/*.js"]
   // "references": [{ "path": "./tsconfig.node.json" }]

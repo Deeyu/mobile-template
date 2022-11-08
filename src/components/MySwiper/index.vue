@@ -2,14 +2,11 @@
  * @Author: DaiYu
  * @Date: 2022-05-04 14:45:00
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-13 16:47:06
- * @FilePath: \src\components\MySwiper\index.vue
+ * @LastEditTime: 2022-10-25 17:31:12
+ * @FilePath: \src\components\Swiper\index.vue
 -->
 <!-- 轮播组件 -->
 <template>
-  <!-- :pagination="{
-      clickable: true,
-    }" -->
   <swiper
     class="ul"
     :slides-per-view="5"

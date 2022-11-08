@@ -7,63 +7,63 @@
 -->
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="email=no,address=no" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="author" content="万顺叫车云信息技术有限公司" />
+    <meta
+      name="keywords"
+      content="万顺,万顺叫车,叫车,打车,jc,dc,wsjc,在线打车,在线叫车,微信打车,公众号打车,网约车,出租车, 快车, 巡游车,滴滴,神州专车,优步,易到,taxi,car"
+    />
+    <meta
+      name="description"
+      content="万顺,万顺叫车,叫车,打车,jc,dc,wsjc,在线打车,在线叫车,微信打车,公众号打车,网约车,出租车, 快车, 巡游车,滴滴,神州专车,优步,易到,taxi,car"
+    />
+    <!-- 去掉苹果工具栏和菜单栏 -->
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <!-- 全屏 -->
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- 告知部分国产浏览器采用高速模式渲染页面 -->
+    <meta name="renderer" content="webkit" />
+    <!-- 在 head 标签中添加 meta 标签，并设置 viewport-fit=cover 值 -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 minimal-ui, user-scalable=no,viewport-fit=cover"
+    />
+    <link rel=" icon" href="<%= BASE_URL %>favicon.png" />
+    <link rel="stylesheet" href="/browser_upgrade/index.css" />
+    <title><%= title %></title>
+    <%- copyrightScript %>
+  </head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="format-detection" content="email=no,address=no" />
-	<meta name="format-detection" content="telephone=yes" />
-	<meta name="author" content="万顺叫车云信息技术有限公司" />
-	<meta name="keywords"
-		content="万顺,万顺叫车,叫车,打车,jc,dc,wsjc,在线打车,在线叫车,微信打车,公众号打车,网约车,出租车, 快车, 巡游车,滴滴,神州专车,优步,易到,taxi,car" />
-	<meta name="description"
-		content="万顺,万顺叫车,叫车,打车,jc,dc,wsjc,在线打车,在线叫车,微信打车,公众号打车,网约车,出租车, 快车, 巡游车,滴滴,神州专车,优步,易到,taxi,car" />
-	<!-- 去掉苹果工具栏和菜单栏 -->
-	<meta content="yes" name="apple-mobile-web-app-capable" />
-	<!-- 全屏 -->
-	<meta content="yes" name="apple-touch-fullscreen" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<!-- 告知部分国产浏览器采用高速模式渲染页面 -->
-	<meta name="renderer" content="webkit" />
-	<!-- 在 head 标签中添加 meta 标签，并设置 viewport-fit=cover 值 -->
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 minimal-ui, user-scalable=no,viewport-fit=cover">
-	<link rel=" icon" href="<%= BASE_URL %>favicon.png">
-	<link rel="stylesheet" href="/browser_upgrade/index.css" />
-	<title>
-		<%= title %>
-	</title>
-	<%- copyrightScript %>
-</head>
-
-<body>
-	<div id="app">
-		<div class="wsecar">
-			<div class="loading">
-				<div class="square"></div>
-				<div class="square"></div>
-				<div class="square"></div>
-				<div class="square"></div>
-			</div>
-			<div class="text">
-				<%= title %>载入中…
-			</div>
-		</div>
-		<div id="browser-upgrade">
-			<div class="title">为了您的体验，推荐使用以下浏览器</div>
-			<div class="browsers">
-				<a href="https://www.microsoft.com/edge" target="_blank" class="browser">
-					<img class="browser-icon" src="/browser_upgrade/edge.png" />
-					<div class="browser-name">Mircosoft Edge</div>
-				</a>
-				<a href="https://www.google.cn/chrome/" target="_blank" class="browser">
-					<img class="browser-icon" src="/browser_upgrade/chrome.png" />
-					<div class="browser-name">Google Chrome</div>
-				</a>
-			</div>
-		</div>
-	</div>
-		<script type="module" src="/src/main.ts"></script>
-		<%- devtoolScript %>
-</body>
-
+  <body>
+    <div id="app">
+      <div class="wsecar">
+        <div class="loading">
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+        </div>
+        <div class="text"><%= title %>载入中…</div>
+      </div>
+      <div id="browser-upgrade">
+        <div class="title">为了您的体验，推荐使用以下浏览器</div>
+        <div class="browsers">
+          <a href="https://www.microsoft.com/edge" target="_blank" class="browser">
+            <img class="browser-icon" src="/browser_upgrade/edge.png" />
+            <div class="browser-name">Mircosoft Edge</div>
+          </a>
+          <a href="https://www.google.cn/chrome/" target="_blank" class="browser">
+            <img class="browser-icon" src="/browser_upgrade/chrome.png" />
+            <div class="browser-name">Google Chrome</div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+    <%- devtoolScript %>
+  </body>
 </html>
