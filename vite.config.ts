@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-02-18 16:53:01
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-26 09:25:58
+ * @LastEditTime: 2022-11-03 11:29:39
  * @FilePath: \vite.config.ts
  */
 import type { UserConfig, ConfigEnv } from 'vite'
@@ -70,8 +70,9 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
       //   }
       // }
     },
+    // 选项可以选择需要或不需要进行预编译的依赖的名称，Vite 则会根据该选项来确定是否对该依赖进行预编译。
     optimizeDeps: {
-      include: ['vant', 'pinia', 'echarts', 'swiper', 'swiper/vue'],
+      include: ['vant', 'pinia', 'echarts', 'swiper', 'swiper/vue', '@vueuse/core'],
     },
     build: {
       sourcemap: !isBuild,

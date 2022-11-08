@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-13 11:05:30
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-25 16:40:50
+ * @LastEditTime: 2022-11-08 08:43:02
  * @FilePath: \build\vite\plugins\autoImport.ts
  */
 /**
@@ -24,7 +24,11 @@ export const AutoImportDeps = () => {
       'pinia',
       'vue-router',
       '@vueuse/core',
-      { '@/utils/http/axios': ['defHttp', 'driverHttp'], vant: ['showFailToast', 'showDialog'] },
+      {
+        '@/utils/http/axios': ['defHttp', 'driverHttp'],
+        vant: ['showFailToast', 'showDialog'],
+        '@/utils/dateUtil': ['formatToDateTime', 'formatToDate', 'dateUtil'],
+      },
     ],
     dts: 'types/auto-imports.d.ts',
     // 解决eslint抛错

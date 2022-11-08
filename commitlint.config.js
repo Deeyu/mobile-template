@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-02-22 09:31:01
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-28 16:45:15
+ * @LastEditTime: 2022-11-08 08:57:52
  * @FilePath: \commitlint.config.js
  */
 module.exports = {
@@ -38,6 +38,7 @@ module.exports = {
         'revert',
         // 构建过程或辅助工具的变动
         'config',
+        'build', // 编译相关
       ],
     ],
     'subject-full-stop': [0, 'never'],
