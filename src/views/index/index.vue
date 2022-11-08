@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-02-18 17:30:23
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-19 10:15:52
+ * @LastEditTime: 2022-11-02 09:30:55
  * @FilePath: \src\views\index\index.vue
 -->
 <template>
@@ -15,12 +15,36 @@
           </van-swipe-item>
         </van-swipe>
       </div>
+      <van-field
+        v-model="time"
+        is-link
+        readonly
+        label="开始时间"
+        placeholder="选择开始时间"
+        @click="show = true"
+      />
+      <van-popup
+        v-model:show="show"
+        round
+        position="bottom"
+        :style="{ height: '35%', overflow: 'hidden' }"
+      >
+        <van-date-picker
+          title="选择日期"
+          :min-date="minDate"
+          :max-date="maxDate"
+          @cancel="cancel"
+          @confirm="confirm"
+        />
+      </van-popup>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup name="Index">
 import { useAppStore } from '@/store/modules/home'
+import type { PickerConfirmEventParams } from 'vant'
+
 onBeforeMount(() => {
   console.log(123)
 })
@@ -29,9 +53,20 @@ const images = reactive<string[]>([
   'https://cdn.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
   'https://cdn.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
 ])
+
+const time = ref('')
+const minDate = new Date(2021, 0, 1)
+const maxDate = new Date(2023, 10, 1)
+const show = ref(false)
 onMounted(async () => {
   await appStore.getBanner()
 })
+const confirm = ({ selectedOptions }: PickerConfirmEventParams) => {
+  console.log(selectedOptions)
+  show.value = false
+  time.value = selectedOptions.reduce((pre, next) => pre + (pre ? '-' : '') + next?.text, '')
+}
+const cancel = () => {}
 </script>
 <style lang="less" scoped>
 .index {

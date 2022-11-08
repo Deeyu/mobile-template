@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-25 10:32:00
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-25 10:32:01
+ * @LastEditTime: 2022-11-08 08:51:50
  * @FilePath: \src\utils\verify.ts
  */
 // 验证手机号
@@ -16,7 +16,7 @@ export const verifyPassword = (value: string) => {
 }
 // 验证网址
 export const verifyUrl = (url: string) => {
-  return /^(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?$/i.test(
+  return /^(((ht|f)tps?):\/\/)?([^!@#$%^&*?.\s-]([^!@#$%^&*?.\s]{0,63}[^!@#$%^&*?.\s])?\.)+[a-z]{2,6}\/?/.test(
     url,
-  ) // eslint-disable-line
+  )
 }
