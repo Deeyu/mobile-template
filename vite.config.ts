@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-02-18 16:53:01
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-11-03 11:29:39
+ * @LastEditTime: 2022-11-16 10:00:21
  * @FilePath: \vite.config.ts
  */
 import type { UserConfig, ConfigEnv } from 'vite'
@@ -85,7 +85,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
         // 自动分割包名输出 chunkSizeWarningLimit 配置大小
         output: {
           manualChunks: {
-            // echarts: ['echarts'],
+            echarts: ['echarts'],
             vant: ['vant'],
           },
         },
