@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-13 11:05:30
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-25 16:26:30
+ * @LastEditTime: 2022-11-17 11:16:57
  * @FilePath: \build\vite\plugins\index.ts
  */
 /**
@@ -25,6 +25,7 @@ import { ConfigCompressPlugin } from './compress'
 // import { ConfigPagesPlugin } from './pages'
 import { ConfigProgressPlugin } from './progress'
 import { ConfigImageminPlugin } from './imagemin'
+import { AutoImportImages } from './autoImage'
 // import { ConfigVConsolePlugin } from './vconsole'
 import { createHtml } from './html'
 
@@ -52,6 +53,8 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild = false) {
     VitePluginCertificate({
       source: 'coding',
     }),
+    // 图片自动导入
+    AutoImportImages(),
   ]
   // @vitejs/plugin-legacy
   VITE_LEGACY && isBuild && vitePlugins.push(legacy({ targets: ['defaults', 'not IE 11'] }))
