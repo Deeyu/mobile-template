@@ -2,11 +2,11 @@
  * @Author: DaiYu
  * @Date: 2022-07-05 15:43:31
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-13 10:08:47
+ * @LastEditTime: 2022-11-21 09:22:19
  * @FilePath: \src\store\modules\home\index.ts
  */
 import { defineStore } from 'pinia'
-import { getBannerApi } from '@/api/home'
+import { getSelectBusinessApi } from '@/api/home'
 import { AppStore } from './type'
 
 export const useAppStore = defineStore({
@@ -19,9 +19,9 @@ export const useAppStore = defineStore({
     bannerList: state => state.bannerList,
   },
   actions: {
-    async getBanner() {
+    async getSelectBusinessApi() {
       // 可以做异步
-      const res = await getBannerApi(2)
+      const res = await getSelectBusinessApi(0)
       console.log(222, res)
     },
   },
