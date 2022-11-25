@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-02-18 16:53:01
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-11-16 10:00:21
+ * @LastEditTime: 2022-11-21 09:54:45
  * @FilePath: \vite.config.ts
  */
 import type { UserConfig, ConfigEnv } from 'vite'
@@ -72,7 +72,17 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
     },
     // 选项可以选择需要或不需要进行预编译的依赖的名称，Vite 则会根据该选项来确定是否对该依赖进行预编译。
     optimizeDeps: {
-      include: ['vant', 'pinia', 'echarts', 'swiper', 'swiper/vue', '@vueuse/core'],
+      include: [
+        'vue',
+        'vue-router',
+        'vant',
+        'vant/es',
+        'pinia',
+        'echarts',
+        'swiper',
+        'swiper/vue',
+        '@vueuse/core',
+      ],
     },
     build: {
       sourcemap: !isBuild,
@@ -84,6 +94,9 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
       rollupOptions: {
         // 自动分割包名输出 chunkSizeWarningLimit 配置大小
         output: {
+          chunkFileNames: 'static/js/[name]-[hash].js',
+          entryFileNames: 'static/js/[name]-[hash].js',
+          assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
           manualChunks: {
             echarts: ['echarts'],
             vant: ['vant'],

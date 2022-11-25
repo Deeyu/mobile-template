@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-13 11:05:30
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-11-17 11:16:57
+ * @LastEditTime: 2022-11-23 11:19:19
  * @FilePath: \build\vite\plugins\index.ts
  */
 /**
@@ -26,6 +26,8 @@ import { ConfigCompressPlugin } from './compress'
 import { ConfigProgressPlugin } from './progress'
 import { ConfigImageminPlugin } from './imagemin'
 import { AutoImportImages } from './autoImage'
+import OptimizationPersist from 'vite-plugin-optimize-persist'
+import PkgConfig from 'vite-plugin-package-config'
 // import { ConfigVConsolePlugin } from './vconsole'
 import { createHtml } from './html'
 
@@ -47,6 +49,8 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild = false) {
     Inspect({
       enabled: VITE_APP_INSPECT,
     }),
+    PkgConfig(),
+    OptimizationPersist(),
     // setup语法糖组件名支持
     vueSetupExtend(),
     // 提供https证书

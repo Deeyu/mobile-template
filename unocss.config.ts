@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-21 16:38:44
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-26 11:10:19
+ * @LastEditTime: 2022-11-25 16:49:27
  * @docs https://github.com/unocss/unocss
  * @FilePath: \unocss.config.ts
  */
@@ -49,11 +49,16 @@ export default defineConfig({
     icon: 'w-6 h-6 fill-current',
     app: 'text-red',
     'app-border': 'border-gray-200 dark:border-dark-300',
-    btn: 'py-2 px-4 font-semibold rounded-lg shadow-md',
+    // btn: 'py-2 px-4 font-semibold rounded-lg shadow-md',
+    btn: 'px-20px py-20px rounded inline-block bg-teal-600 text-white cursor-pointer active:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50',
     'btn-green': 'text-white bg-green-500 hover:bg-green-700',
   },
   rules: [[/^bc-(.+)$/, ([, color]) => ({ 'border-color': `#${color}` })]], // 可自定义规则
   preflights: [],
+  // transformers: [
+  //   transformerDirectives(),
+  //   transformerVariantGroup(),
+  // ],
   theme: {
     colors: {
       primary: 'var(--van-red)',
@@ -76,6 +81,10 @@ export default defineConfig({
       // error_hover: 'var(--error-color-hover)',
       // error_pressed: 'var(--error-color-pressed)',
       // error_active: 'var(--error-color-active)',
+    },
+    spacing: {
+      'safe-area-inset-top': 'env(safe-area-inset-top)',
+      'safe-area-inset-bottom': 'env(safe-area-inset-bottom)',
     },
   },
 })
