@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-02-18 16:53:01
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-11-21 09:54:45
+ * @LastEditTime: 2022-11-25 19:45:45
  * @FilePath: \vite.config.ts
  */
 import type { UserConfig, ConfigEnv } from 'vite'
@@ -82,6 +82,8 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
         'swiper',
         'swiper/vue',
         '@vueuse/core',
+        'xgplayer',
+        'better-scroll',
       ],
     },
     build: {

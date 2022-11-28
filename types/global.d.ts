@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-13 17:14:32
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-11-22 18:11:02
+ * @LastEditTime: 2022-11-25 18:57:14
  * @FilePath: \types\global.d.ts
  */
 import type {
@@ -15,25 +15,6 @@ import type {
 } from 'vue'
 
 declare global {
-  // namespace AMap {
-  //   export interface GeolocationResult {
-  //     position: AMap.LngLat
-  //     accuracy: number
-  //     location_type: string
-  //     message: string
-  //     isConverted: boolean
-  //     info: string
-  //     addressComponent: any
-  //     formattedAddress: string
-  //     pois: array
-  //     roads: array
-  //     crosses: array
-  //   }
-  //   export interface GeolocationError {
-  //     info: string
-  //     message: string
-  //   }
-  // }
   const __SYSTEM_INFO__: {
     pkg: {
       name: string
