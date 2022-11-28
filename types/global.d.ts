@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-13 17:14:32
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-18 14:54:37
+ * @LastEditTime: 2022-11-25 18:57:14
  * @FilePath: \types\global.d.ts
  */
 import type {

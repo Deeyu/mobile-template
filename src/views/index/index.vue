@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-02-18 17:30:23
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-11-02 09:30:55
+ * @LastEditTime: 2022-11-28 09:23:21
  * @FilePath: \src\views\index\index.vue
 -->
 <template>
@@ -38,13 +38,25 @@
         />
       </van-popup>
     </div>
+    <div class="h-88px">
+      <better-scroll ref="bsScroll" :options="{ scrollX: true, scrollY: false }">
+        <div class="btn bg-[#F22A25] opacity-80">立即叫车</div>
+        <div class="btn bg-[#F22A25] opacity-80">立即叫车</div>
+        <div class="btn bg-[#F22A25] opacity-80">立即叫车</div>
+        <div class="btn bg-[#F22A25] opacity-80">立即叫车</div>
+        <div class="btn bg-[#F22A25] opacity-80">立即叫车</div>
+        <div class="btn bg-[#F22A25] opacity-80">立即叫车</div>
+        <div class="btn bg-[#F22A25] opacity-80">立即叫车</div>
+      </better-scroll>
+    </div>
+    <div class="btn bg-[#F22A25] opacity-80">立即叫车</div>
   </div>
 </template>
 
 <script lang="ts" setup name="Index">
 import { useAppStore } from '@/store/modules/home'
 import type { PickerConfirmEventParams } from 'vant'
-
+import type { BScrollInstance } from 'better-scroll'
 onBeforeMount(() => {
   console.log(123)
 })
@@ -58,15 +70,18 @@ const time = ref('')
 const minDate = new Date(2021, 0, 1)
 const maxDate = new Date(2023, 10, 1)
 const show = ref(false)
+const bsScroll = ref<BScrollInstance>()
 onMounted(async () => {
-  await appStore.getBanner()
+  await appStore.getSelectBusinessApi()
 })
 const confirm = ({ selectedOptions }: PickerConfirmEventParams) => {
   console.log(selectedOptions)
   show.value = false
   time.value = selectedOptions.reduce((pre, next) => pre + (pre ? '-' : '') + next?.text, '')
 }
-const cancel = () => {}
+const cancel = () => {
+  show.value = false
+}
 </script>
 <style lang="less" scoped>
 .index {
