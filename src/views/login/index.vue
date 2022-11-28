@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-07-02 14:41:18
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-11-25 17:22:59
+ * @LastEditTime: 2022-11-28 09:59:24
  * @FilePath: \src\views\login\index.vue
 -->
 <template>
@@ -41,7 +41,6 @@
 </template>
 
 <script lang="ts" setup>
-import { getLocation } from '@/hooks/useAmap'
 import { verifyPhone } from '@/utils/verify'
 
 const form = reactive({
@@ -49,13 +48,11 @@ const form = reactive({
   smsCode: '',
 })
 const checked = ref(false)
-const location = ref(null)
 const smsEnabled = computed(() => form.phone.length === 11 && verifyPhone(form.phone))
 
 // const route = useRouter()
 onBeforeMount(async () => {
   console.log('2.组件挂载页面之前执行----onBeforeMount')
-  location.value = await getLocation()
 })
 onMounted(() => {
   console.log('3.-组件挂载到页面之后执行-------onMounted')
