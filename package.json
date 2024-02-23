@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "vite",
     "build:dev": "vue-tsc --noEmit && vite build --mode development",
-    "build": "vue-tsc --noEmit && vite build --mode production",
+    "build": "vite build --mode production",
     "typecheck": "npx vue-tsc --noEmit",
     "preview": "npm run build && vite preview",
     "deps:fresh": "npx taze -w",
