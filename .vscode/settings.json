@@ -1,49 +1,46 @@
 {
-  "path-intellisense.mappings": {
-    "/@/": "${workspaceRoot}/src"
-  },
+	"path-intellisense.mappings": {
+		"/@/": "${workspaceRoot}/src"
+	},
 	// Enable the ESlint flat config support
-  "eslint.experimental.useFlatConfig": true,
+	"eslint.experimental.useFlatConfig": true,
 
-  // Disable the default formatter
-  // "prettier.enable": false,
-  "editor.formatOnSave": true,
+	// Disable the default formatter
+	"prettier.enable": false,
+	"editor.formatOnSave": false,
 
-  // // Auto fix
-  // "editor.codeActionsOnSave": {
-  //   "source.fixAll.eslint": "explicit",
-  //   "source.organizeImports": "never"
-  // },
-  // 开启 eslint
-  "eslint.enable": true,
-  // 开启 prettier
-  "prettier.enable": true,
-  // 开启 eslint 作为格式化工具
-  "eslint.format.enable": true,
+	// // Auto fix
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.organizeImports": "never"
+	},
+
 	// Silent the stylistic rules in you IDE, but still auto fix them
-  // "eslint.rules.customizations": [
-  //   { "rule": "style/*", "severity": "off" },
-  //   { "rule": "format/*", "severity": "off" },
-  //   { "rule": "*-indent", "severity": "off" },
-  //   { "rule": "*-spacing", "severity": "off" },
-  //   { "rule": "*-spaces", "severity": "off" },
-  //   { "rule": "*-order", "severity": "off" },
-  //   { "rule": "*-dangle", "severity": "off" },
-  //   { "rule": "*-newline", "severity": "off" },
-  //   { "rule": "*quotes", "severity": "off" },
-  //   { "rule": "*semi", "severity": "off" }
-  // ],
-	// "eslint.validate": [
-  //   "javascript",
-  //   "javascriptreact",
-  //   "typescript",
-  //   "typescriptreact",
-  //   "vue",
-  //   "html",
-  //   "markdown",
-  //   "json",
-  //   "jsonc",
-  "npm.packageManager": "pnpm",
-  "typescript.tsdk": "node_modules\\typescript\\lib",
-  "unocss.root": "packages/client"
+	"eslint.rules.customizations": [
+		{ "rule": "style/*", "severity": "off" },
+		{ "rule": "format/*", "severity": "off" },
+		{ "rule": "*-indent", "severity": "off" },
+		{ "rule": "*-spacing", "severity": "off" },
+		{ "rule": "*-spaces", "severity": "off" },
+		{ "rule": "*-order", "severity": "off" },
+		{ "rule": "*-dangle", "severity": "off" },
+		{ "rule": "*-newline", "severity": "off" },
+		{ "rule": "*quotes", "severity": "off" },
+		{ "rule": "*semi", "severity": "off" }
+	],
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"vue",
+		"html",
+		"markdown",
+		"json",
+		"jsonc",
+		"yaml"
+	],
+	"npm.packageManager": "pnpm",
+	"typescript.tsdk": "node_modules\\typescript\\lib",
+	"unocss.root": "packages/client"
 }
