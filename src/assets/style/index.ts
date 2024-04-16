@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-18 19:57:21
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-27 10:46:44
+ * @LastEditTime: 2024-04-16 11:04:41
  * @FilePath: \src\assets\style\index.ts
  */
 import 'normalize.css'

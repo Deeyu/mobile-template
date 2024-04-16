@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-02-18 16:53:01
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-11-25 19:45:45
+ * @LastEditTime: 2024-04-16 13:36:44
  * @FilePath: \vite.config.ts
  */
 import type { UserConfig, ConfigEnv } from 'vite'
@@ -29,6 +29,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
   const isBuild = command === 'build'
   return {
     base: VITE_PUBLIC_PATH,
+    // 使用 esbuild 压缩 剔除 console.log
     esbuild: {
       pure: VITE_DROP_CONSOLE ? ['console.log', 'debugger'] : [],
     },
@@ -72,6 +73,15 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
     },
     // 选项可以选择需要或不需要进行预编译的依赖的名称，Vite 则会根据该选项来确定是否对该依赖进行预编译。
     optimizeDeps: {
+      /**
+       * 依赖预构建，vite 启动时会将下面 include 里的模块，编译成 esm 格式并缓存到 node_modules/.vite 文件夹，
+       * 页面加载到对应模块时如果浏览器有缓存就读取浏览器缓存，如果没有会读取本地缓存并按需加载
+       * 尤其当您禁用浏览器缓存时（这种情况只应该发生在调试阶段）必须将对应模块加入到 include 里，
+       * 否则会遇到开发环境切换页面卡顿的问题（vite 会认为它是一个新的依赖包会重新加载并强制刷新页面），
+       * 因为它既无法使用浏览器缓存，又没有在本地 node_modules/.vite 里缓存
+       * 温馨提示：如果你使用的第三方库是全局引入，也就是引入到 src/main.ts 文件里，
+       * 就不需要再添加到 include 里了，因为 vite 会自动将它们缓存到 node_modules/.vite
+       */
       include: [
         'vue',
         'vue-router',
@@ -91,6 +101,7 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
       target: 'es2015', // 默认值是一个 Vite 特有的值——'modules'，这是指 支持原生 ES 模块的浏览器。
       // outDir: 'dist',
       // assetsDir: 'assets',
+      minify: 'esbuild', // terser\esbuild
       chunkSizeWarningLimit: 2000,
       // 分包
       rollupOptions: {
@@ -105,15 +116,15 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
           },
         },
       },
-      minify: 'terser', // esbuild
-      terserOptions: {
-        // 生产环境去除 console debugger
-        compress: {
-          keep_infinity: true,
-          drop_console: Object.is(VITE_DROP_CONSOLE, 'true'),
-          drop_debugger: true,
-        },
-      },
+      // 只有 minify 为 terser 的时候, 本配置项才能起作用
+      // terserOptions: {
+      //   // 生产环境去除 console debugger
+      //   compress: {
+      //     keep_infinity: true,
+      //     drop_console: Object.is(VITE_DROP_CONSOLE, 'true'),
+      //     drop_debugger: true,
+      //   },
+      // },
     },
     define: {
       __SYSTEM_INFO__: JSON.stringify({

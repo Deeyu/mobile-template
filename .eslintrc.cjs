@@ -2,8 +2,8 @@
  * @Author: DaiYu
  * @Date: 2022-02-21 10:32:53
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-18 09:29:41
- * @FilePath: \.eslintrc.js
+ * @LastEditTime: 2024-04-16 15:08:45
+ * @FilePath: \.eslintrc.cjs
  */
 module.exports = {
   root: true,

@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-13 11:05:30
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-11-23 11:19:19
+ * @LastEditTime: 2024-04-16 13:52:51
  * @FilePath: \build\vite\plugins\index.ts
  */
 /**
@@ -13,7 +13,6 @@ import { PluginOption } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import VitePluginCertificate from 'vite-plugin-mkcert'
-import vueSetupExtend from 'vite-plugin-vue-setup-extend-plus'
 import Unocss from 'unocss/vite'
 import legacy from '@vitejs/plugin-legacy'
 import Inspect from 'vite-plugin-inspect'
@@ -22,12 +21,10 @@ import { AutoRegistryComponents } from './component'
 import { AutoImportDeps } from './autoImport'
 import { ConfigVisualizerConfig } from './visualizer'
 import { ConfigCompressPlugin } from './compress'
-// import { ConfigPagesPlugin } from './pages'
 import { ConfigProgressPlugin } from './progress'
 import { ConfigImageminPlugin } from './imagemin'
 import { AutoImportImages } from './autoImage'
-import OptimizationPersist from 'vite-plugin-optimize-persist'
-import PkgConfig from 'vite-plugin-package-config'
+import VueDevTools from 'vite-plugin-vue-devtools'
 // import { ConfigVConsolePlugin } from './vconsole'
 import { createHtml } from './html'
 
@@ -49,16 +46,13 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild = false) {
     Inspect({
       enabled: VITE_APP_INSPECT,
     }),
-    PkgConfig(),
-    OptimizationPersist(),
-    // setup语法糖组件名支持
-    vueSetupExtend(),
     // 提供https证书
     VitePluginCertificate({
       source: 'coding',
     }),
     // 图片自动导入
     AutoImportImages(),
+    VueDevTools(),
   ]
   // @vitejs/plugin-legacy
   VITE_LEGACY && isBuild && vitePlugins.push(legacy({ targets: ['defaults', 'not IE 11'] }))

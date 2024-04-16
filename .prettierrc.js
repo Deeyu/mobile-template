@@ -2,10 +2,10 @@
  * @Author: DaiYu
  * @Date: 2022-02-21 10:38:30
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-10-28 17:29:46
+ * @LastEditTime: 2024-04-16 14:44:44
  * @FilePath: \.prettierrc.js
  */
-module.exports = {
+export default {
   printWidth: 100, // 每行代码长度（默认80）
   tabWidth: 2, // 每个tab相当于多少个空格（默认2）ab进行缩进（默认false）
   useTabs: false, // 是否使用tab空格

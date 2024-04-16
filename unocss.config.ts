@@ -2,25 +2,29 @@
  * @Author: DaiYu
  * @Date: 2022-10-21 16:38:44
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-11-25 16:49:27
+ * @LastEditTime: 2024-04-16 11:49:27
  * @docs https://github.com/unocss/unocss
  * @FilePath: \unocss.config.ts
  */
 import { defineConfig, presetAttributify, presetIcons, presetUno } from 'unocss'
 
 export default defineConfig({
-  exclude: [
-    'node_modules',
-    '.git',
-    '.github',
-    '.husky',
-    '.vscode',
-    'build',
-    'dist',
-    'mock',
-    'public',
-    './stats.html',
-  ],
+  content: {
+    pipeline: {
+      exclude: [
+        'node_modules',
+        '.git',
+        '.github',
+        '.husky',
+        '.vscode',
+        'build',
+        'dist',
+        'mock',
+        'public',
+        './stats.html',
+      ],
+    },
+  },
   presets: [
     // 使用自带的内部预设， 按需引用
     presetUno(), // 工具类预设
@@ -61,6 +65,12 @@ export default defineConfig({
   // ],
   theme: {
     colors: {
+      // 扩展主题色
+      brand: {
+        1: '#333333',
+        2: '#666666',
+        3: '#999999',
+      },
       primary: 'var(--van-red)',
       // primary_hover: 'var(--primary-color-hover)',
       // primary_pressed: 'var(--primary-color-pressed)',

@@ -2,10 +2,10 @@
  * @Author: DaiYu
  * @Date: 2022-02-22 09:31:01
  * @LastEditors: DaiYu
- * @LastEditTime: 2022-11-08 08:57:52
- * @FilePath: \commitlint.config.js
+ * @LastEditTime: 2024-04-16 11:33:29
+ * @FilePath: \commitlint.config.cjs
  */
-module.exports = {
+export default {
   extends: ['@commitlint/config-conventional'],
   rules: {
     'type-enum': [
