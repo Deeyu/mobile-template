@@ -8,6 +8,7 @@
 import { createPinia } from 'pinia'
 import { useUserStore } from './modules/user'
 import { useAppStore } from './modules/home'
+
 const pinia = createPinia()
 
 export { useUserStore, useAppStore }

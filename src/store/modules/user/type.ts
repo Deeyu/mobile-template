@@ -6,7 +6,7 @@
  * @FilePath: \src\store\modules\user\type.ts
  */
 export interface UserStore {
-  name: string
-  token: string
-  userInfo: any
+	name: string
+	token: string
+	userInfo: any
 }

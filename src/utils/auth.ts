@@ -7,16 +7,16 @@
  */
 const TokenKey = 'cookie'
 const TokenPrefix = 'Bearer '
-const isLogin = () => {
-  return !!localStorage.getItem(TokenKey)
+function isLogin() {
+	return !!localStorage.getItem(TokenKey)
 }
-const getToken = () => {
-  return localStorage.getItem(TokenKey)
+function getToken() {
+	return localStorage.getItem(TokenKey)
 }
-const setToken = (token: string) => {
-  localStorage.setItem(TokenKey, token)
+function setToken(token: string) {
+	localStorage.setItem(TokenKey, token)
 }
-const clearToken = () => {
-  localStorage.removeItem(TokenKey)
+function clearToken() {
+	localStorage.removeItem(TokenKey)
 }
 export { TokenPrefix, isLogin, getToken, setToken, clearToken }

@@ -19,6 +19,7 @@ export default antfu(
 		},
 		rules: {
 			'no-console': 'off',
+			'eqeqeq': 'off',
 			// 'no-mixed-spaces-and-tabs': 'off',
 			// 强制组件顶级元素的顺序
 			'vue/block-order': [

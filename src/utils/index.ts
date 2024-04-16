@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-04-26 14:46:40
  * @LastEditors: DaiYu
- * @LastEditTime: 2024-04-16 17:25:52
+ * @LastEditTime: 2024-04-16 17:57:41
  * @FilePath: \src\utils\index.ts
  */
 import { isObject } from '@/utils/is'
@@ -72,7 +72,7 @@ export function buildUUID() {
 		uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
 			const r = (d + Math.random() * 16) % 16 | 0
 			d = Math.floor(d / 16)
-			return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16)
+			return (c == 'x' ? r : (r & 0x3) | 0x8).toString(16)
 		})
 		window.localStorage.setItem('uuid', uuid)
 	}
