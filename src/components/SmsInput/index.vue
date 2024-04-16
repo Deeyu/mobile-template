@@ -41,7 +41,9 @@
   </van-field>
 </template>
 
-<script lang="ts" setup name="SmsInput">
+<script lang="ts" setup>
+// 定义组件名
+defineOptions({ name: 'SmsInput' })
 import type { CountDownInstance } from 'vant'
 const props = defineProps({
   smsEnabled: {

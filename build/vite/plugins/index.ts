@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-10-13 11:05:30
  * @LastEditors: DaiYu
- * @LastEditTime: 2024-04-16 13:52:51
+ * @LastEditTime: 2024-04-16 15:32:08
  * @FilePath: \build\vite\plugins\index.ts
  */
 /**
@@ -38,7 +38,12 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild = false) {
   } = viteEnv
   const vitePlugins: (PluginOption | PluginOption[])[] = [
     // vue支持
-    vue(),
+    vue({
+      script: {
+        defineModel: true, // defineModel 这是一个语法糖
+        propsDestructure: true, // 解构 props
+      },
+    }),
     // JSX支持
     vueJsx(),
     Unocss(),

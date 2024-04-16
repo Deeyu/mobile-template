@@ -2,20 +2,25 @@
   <div ref="chartRef" :style="{ height, width }"></div>
 </template>
 <script lang="ts" setup>
-import type { PropType } from 'vue'
 import { onMounted, ref, Ref } from 'vue'
 import { useECharts } from '@/hooks/useECharts'
 
-defineProps({
-  width: {
-    type: String as PropType<string>,
-    default: '100%',
-  },
-  height: {
-    type: String as PropType<string>,
-    default: '280px',
-  },
-})
+// 1. 解构写法
+const { width = '100%', height = '280px' } = defineProps<{
+  width: string
+  height: string
+}>()
+// // 2.设置默认值
+// withDefaults(
+//   defineProps<{
+//     width: string
+//     height: string
+//   }>(),
+//   {
+//     width: '100%',
+//     height: '100',
+//   },
+// )
 const chartRef = ref<HTMLDivElement | null>(null)
 const { setOptions } = useECharts(chartRef as Ref<HTMLDivElement>)
 
