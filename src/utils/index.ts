@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-04-26 14:46:40
  * @LastEditors: DaiYu
- * @LastEditTime: 2024-04-16 17:57:41
+ * @LastEditTime: 2024-04-19 17:59:05
  * @FilePath: \src\utils\index.ts
  */
 import { isObject } from '@/utils/is'
@@ -77,6 +77,27 @@ export function buildUUID() {
 		window.localStorage.setItem('uuid', uuid)
 	}
 	return uuid
+}
+
+// import { v4 as uuidv4 } from 'uuid';
+// const uuid = uuidv4();
+// console.log(uuid); // 输出类似 "6e1b3a5f-983d-4e02-b244-6952d91d2432"
+export async function generateUUID() {
+	const array = new Uint8Array(16)
+	await crypto.getRandomValues(array)
+
+	let result = ''
+	for (let i = 0; i < array.length; ++i) {
+		const hex = array[i].toString(16)
+		result += (hex.length === 1 ? '0' : '') + hex
+	}
+
+	// 根据RFC 4122标准调整格式
+	return `${result.slice(0, 8)}-${
+         result.slice(8, 12)}-${
+         result.slice(12, 16)}-4${
+         result.slice(16, 20)}-${
+         result.slice(20)}`
 }
 
 export function openWindow(

@@ -2,7 +2,7 @@
  * @Author: DaiYu
  * @Date: 2022-02-18 16:53:01
  * @LastEditors: DaiYu
- * @LastEditTime: 2024-04-16 17:22:02
+ * @LastEditTime: 2024-05-21 14:35:50
  * @FilePath: \src\App.vue
 -->
 <template>
@@ -22,6 +22,7 @@
 import 'dayjs/locale/zh-cn'
 </script>
 
+<!-- // __wxConfig.envVersion小程序环境判断 -->
 <style lang="less">
 // :deep() 之前的 '>>>' 已经被废弃，现在使用:deep()伪类
 #app {
@@ -31,7 +32,7 @@ import 'dayjs/locale/zh-cn'
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
+	// text-align: center;
 	color: @black;
 }
 </style>
